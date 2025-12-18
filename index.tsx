@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { CheckCircle, ArrowRight, Star } from 'lucide-react';
@@ -44,7 +43,6 @@ const QUIZ_LINK = "https://quiz-amanda.vercel.app/";
 
 const Header = () => (
   <header style={{
-    padding: '1rem 2rem',
     padding: '1rem 0',
     backgroundColor: colors.white,
     boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
@@ -52,28 +50,22 @@ const Header = () => (
     top: 0,
     zIndex: 1000,
   }}>
-    <nav className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
     <nav style={{ ...styles.container, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-        {/* Usamos o nome exato logo.jpg que está na pasta public */}
         <img 
           src="/logo.jpg" 
           alt="Amanda Carter Logo" 
-          style={{ height: '60px', width: 'auto', display: 'block' }} 
           style={{ height: '50px', width: 'auto', display: 'block' }} 
         />
-        <div style={{ fontSize: '1.5rem', fontWeight: 'bold', fontFamily: "'Playfair Display', serif" }}>
         <div style={{ fontSize: '1.5rem', fontWeight: 'bold', fontFamily: "'Playfair Display', serif", color: colors.text }}>
           Amanda Carter
         </div>
       </div>
-      <a href="https://wa.me/...href="https://quiz-amanda.vercel.app/"
+      
       {/* Botão 1: Quero saber mais */}
       <a href={QUIZ_LINK} 
          target="_blank" 
          rel="noopener noreferrer" 
-         className="btn" 
-         style={{marginTop: 0}}>
          style={{
            ...styles.btn,
            marginTop: 0, 
@@ -84,7 +76,6 @@ const Header = () => (
       </a>
     </nav>
   </header>
-);
 );
 
 const Hero = () => (
@@ -118,7 +109,7 @@ const Hero = () => (
       </p>
       
       {/* Botão 2: Aumentar meu faturamento */}
-      <a href={"https://quiz-amanda.vercel.app/"}
+      <a href={QUIZ_LINK}
          target="_blank"
          rel="noopener noreferrer"
          style={styles.btn}>
@@ -153,7 +144,7 @@ const Features = () => (
           
           {/* Botão 3: Descubra como */}
           <div style={{ marginTop: '2rem' }}>
-            <a href={"https://quiz-amanda.vercel.app/"}
+            <a href={QUIZ_LINK}
                target="_blank"
                rel="noopener noreferrer"
                style={{ ...styles.btn, backgroundColor: colors.secondary }}>
@@ -163,7 +154,7 @@ const Features = () => (
           </div>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            {/* Placeholder para uma imagem ilustrativa se tiveres uma, senão fica um box elegante */}
+            {/* Placeholder para imagem */}
             <div style={{ 
                 width: '100%', 
                 height: '300px', 
@@ -174,7 +165,7 @@ const Features = () => (
                 justifyContent: 'center',
                 color: '#aaa'
             }}>
-                <span style={{textAlign: 'center'}}>Imagem Ilustrativa<br/>(Adicione em public e refira aqui)</span>
+                <span style={{textAlign: 'center'}}>Imagem Ilustrativa</span>
             </div>
         </div>
       </div>
@@ -185,7 +176,7 @@ const Features = () => (
 const Footer = () => (
   <footer style={{ backgroundColor: colors.secondary, color: colors.white, padding: '2rem 0', textAlign: 'center' }}>
     <div style={styles.container}>
-      <p>&copy; {newXZate().getFullYear()} Amanda Carter. Todos os direitos reservados.</p>
+      <p>&copy; {new Date().getFullYear()} Amanda Carter. Todos os direitos reservados.</p>
     </div>
   </footer>
 );
@@ -212,4 +203,4 @@ if (rootElement) {
       <App />
     </React.StrictMode>
   );
-} 
+}
