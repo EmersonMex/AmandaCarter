@@ -153,7 +153,6 @@ const Features = () => (
           </div>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            {/* Placeholder para uma imagem ilustrativa se tiveres uma, senão fica um box elegante */}
             <div style={{ 
                 width: '100%', 
                 height: '300px', 
@@ -175,7 +174,8 @@ const Features = () => (
 const Footer = () => (
   <footer style={{ backgroundColor: colors.secondary, color: colors.white, padding: '2rem 0', textAlign: 'center' }}>
     <div style={styles.container}>
-      <p>&copy; {newXZate().getFullYear()} Amanda Carter. Todos os direitos reservados.</p>
+      {/* CORREÇÃO AQUI: new Date() em vez do erro anterior */}
+      <p>&copy; {new Date().getFullYear()} Amanda Carter. Todos os direitos reservados.</p>
     </div>
   </footer>
 );
