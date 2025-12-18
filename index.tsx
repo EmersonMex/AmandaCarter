@@ -7,13 +7,20 @@ const Header = () => (
     top: 0,
     zIndex: 1000,
   }}>
-    <nav className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-        {/* Usamos o caminho começando com / pois o Vite busca na pasta public automaticamente */}
-        <img src="/logo-amanda.jpg" alt="Amanda Carter Logo" style={{ height: '60px', width: 'auto' }} />
-        <div style={{ fontSize: '1.5rem', fontWeight: 'bold', fontFamily: "'Playfair Display', serif" }}>Amanda Carter</div>
+        {/* Tente usar o nome 'logo.jpg' ou o nome exato que está no seu PC */}
+        <img 
+          src="/logo.jpg" 
+          alt="Amanda Carter" 
+          style={{ height: '50px', width: 'auto', display: 'block' }} 
+          onError={(e) => { e.currentTarget.src = "https://via.placeholder.com/150?text=Logo+Nao+Encontrada"; }}
+        />
+        <div style={{ fontSize: '1.5rem', fontWeight: 'bold', fontFamily: "'Playfair Display', serif", color: colors.brown }}>
+          Amanda Carter
+        </div>
       </div>
-      <a href="https://wa.me/5511988465800?text=Ola%20Amanda.%20Quero%20vender%20mais%20me%20ajuda%20" target="_blank" rel="noopener noreferrer" className="btn" style={{marginTop: 0}}>Quero saber mais</a>
-    </nav>
+      <a href="#contact" className="btn" style={{ marginTop: 0, padding: '0.5rem 1rem' }}>Falar com Amanda</a>
+    </div>
   </header>
 );
